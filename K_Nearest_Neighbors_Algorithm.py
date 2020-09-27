@@ -13,13 +13,16 @@ y = dataset.iloc[:, -1].values
 
 # Split the dataset into Training & Test sets
 from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, Y_test = train_test_split(X, y, test_size = 0.25, random_state = 0)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25, random_state = 0)
 
 print(X_train)
 
 print(X_test)
 
 print(y_train)
+
+print(y_test)
+
 # Train the K-NN model on the Training set
 from sklearn.neighbors import KNeighborsClassifier
 neigh = KNeighborsClassifier(n_neighbors=3)
