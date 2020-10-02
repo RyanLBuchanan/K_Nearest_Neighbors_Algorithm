@@ -39,7 +39,7 @@ print(X_test)
 
 # Train the K-NN model on the Training set
 from sklearn.neighbors import KNeighborsClassifier
-classifier = KNeighborsClassifier(n_neighbors=5, metric = 'minkowski', p = 2)
+classifier = KNeighborsClassifier(n_neighbors = 5, metric = 'minkowski', p = 2)
 classifier.fit(X_train, y_train)
 
 
