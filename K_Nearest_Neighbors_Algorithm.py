@@ -42,3 +42,8 @@ from sklearn.neighbors import KNeighborsClassifier
 classifier = KNeighborsClassifier(n_neighbors=5, metric = 'minkowski', p = 2)
 classifier.fit(X_train, y_train)
 
+
+# Predict a new result
+print(classifier.predict(sc.transform([[30, 87000]])))
+
+
