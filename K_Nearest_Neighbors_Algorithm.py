@@ -6,10 +6,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
+
 # Import dataset
 dataset = pd.read_csv('Social_Network_Ads.csv')
 X = dataset.iloc[:, 2:4].values
 y = dataset.iloc[:, -1].values
+
 
 # Split the dataset into Training & Test sets
 from sklearn.model_selection import train_test_split
@@ -23,8 +25,20 @@ print(y_train)
 
 print(y_test)
 
+
+# Feature scaling
+from sklearn.preprocessing import StandardScaler
+sc = StandardScaler()
+X_train = sc.fit_transform(X_train)
+X_test = sc.transform(X_test)
+
+print(X_train)
+
+print(X_test)
+
+
 # Train the K-NN model on the Training set
 from sklearn.neighbors import KNeighborsClassifier
-neigh = KNeighborsClassifier(n_neighbors=3)
-neigh.fit(X, y)
+classifier = KNeighborsClassifier(n_neighbors=3)
+classifier.fit(X, y)
 
